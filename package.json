@@ -1,15 +1,21 @@
 {
-  "name": "pi network auto-send wallet bot",
-  "version": "1.0.0",
-  "description": "auto-send wallet bot",
+  "name": "pi-network-auto-send-wallet-bot",
+  "version": "2.0.0",
+  "description": "Extraction rapide de Pi depuis un wallet vers une adresse externe (Horizon / Pi mainnet)",
   "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dry": "node src/index.js --dry-run",
+    "watch": "node src/index.js --watch",
+    "bench": "node src/bench.js",
+    "test": "node test/hotpath.test.js"
   },
   "author": "Kevin Armache",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "@stellar/stellar-sdk": "^13.3.0",
     "bip39": "^3.1.0",
